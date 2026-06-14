@@ -1,3 +1,3 @@
-package domain.eventmanagement.aggregate;
+package domain.eventmanagement.green;
 
 public record Setor(String nome, int capacidade) {}

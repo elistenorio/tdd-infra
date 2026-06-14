@@ -1,7 +1,12 @@
-package domain.eventmanagement.aggregate;
+package domain.eventmanagement.red;
 
+import domain.eventmanagement.green.CapacidadeExcedidaException;
+import domain.eventmanagement.green.Evento;
+import domain.eventmanagement.green.Setor;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class EventoTest {
 

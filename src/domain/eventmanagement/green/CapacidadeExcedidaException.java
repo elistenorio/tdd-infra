@@ -1,4 +1,4 @@
-package domain.eventmanagement.aggregate;
+package domain.eventmanagement.green;
 
 public class CapacidadeExcedidaException extends RuntimeException {
     public CapacidadeExcedidaException(int soma, int lotacaoTotal) {

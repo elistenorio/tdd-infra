@@ -1,4 +1,4 @@
-package domain.eventmanagement.aggregate;
+package domain.eventmanagement.green;
 
 import java.util.ArrayList;
 import java.util.List;
