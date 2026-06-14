@@ -1,5 +1,4 @@
-package domain.eventmanagement.red;
-
+package domain.eventmanagement.refactor;
 
 import org.junit.jupiter.api.Test;
 
