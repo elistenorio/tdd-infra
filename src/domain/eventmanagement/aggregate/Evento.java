@@ -3,6 +3,7 @@ package domain.eventmanagement.aggregate;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Evento {
     private final String nome;
     private final int lotacaoTotal;
@@ -14,14 +15,24 @@ public class Evento {
     }
 
     public void adicionarSetor(Setor setor) {
-        int somaAtual = setores.stream()
-                .mapToInt(Setor::capacidade).sum();
+        validarCapacidade(setor);
+        setores.add(setor);
+    }
 
+    private void validarCapacidade(Setor setor) {
+        int somaAtual = capacidadeOcupada();
         if (somaAtual + setor.capacidade() > lotacaoTotal) {
             throw new CapacidadeExcedidaException(
                     somaAtual + setor.capacidade(), lotacaoTotal
             );
         }
-        setores.add(setor);
+    }
+
+    public int capacidadeOcupada() {
+        return setores.stream().mapToInt(Setor::capacidade).sum();
+    }
+
+    public int capacidadeRestante() {
+        return lotacaoTotal - capacidadeOcupada();
     }
 }
